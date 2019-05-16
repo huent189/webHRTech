@@ -1,5 +1,6 @@
 ﻿using System;
 using test_entity.Models;
+using test_entity.Process;
 using test_entity.Repository;
 
 namespace test_entity
@@ -9,8 +10,9 @@ namespace test_entity
         static void Main(string[] args)
         {
             test_consoleAppContext dbContext = new test_consoleAppContext();
-            WarehouseRepository repo = new WarehouseRepository(dbContext);
-            repo.readDataFromExcel("D:\\HRTech\\webHRTech\\Data.xlsx", 2);
+            InventoryProcess process = new InventoryProcess();
+            process.saveToDB("D:\\HRTech\\webHRTech\\test_entity\\Data.xlsx", 3);
+            
         }
     }
 }
